@@ -14,9 +14,8 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/auth.js'));
 app.use('/api/producto', require('./routes/producto'));
 
-app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
-});
+
+
+
 module.exports = app;
