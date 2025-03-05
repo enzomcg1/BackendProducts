@@ -14,15 +14,15 @@ exports.obtenerClientes = async (req, res) => {
 // Controlador para crear un nuevo cliente
 exports.crearCliente = async (req, res) => {
     try {
+        console.log('Datos recibidos:', req.body); // 🔥 Verifica qué datos están llegando
         const crearCliente = new Cliente(req.body);
         await crearCliente.save();
         res.json({ message: 'Cliente creado con éxito' });
     } catch (error) {
-        console.error('Error al crear el cliente:', error); // Imprime el error completo
+        console.error('Error al crear el cliente:', error); // 🔥 Muestra el error en la consola del backend
         res.status(500).json({ message: 'Error al crear el cliente', error: error.message });
     }
 };
-
 
 // Controlador para actualizar un cliente existente
 exports.actualizarCliente = async (req, res) => {
