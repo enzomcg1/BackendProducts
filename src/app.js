@@ -15,7 +15,7 @@ app.use('/api/auth', require('./routes/auth.js'));
 app.use('/api/producto', require('./routes/producto'));
 app.use('/api/clientes', require('./routes/cliente'));
 app.use('/api/ventas', require('./routes/venta.routes.js'));
-
+app.use('/api/categorias', require('./routes/categoria.routes.js'));
 
 
 
