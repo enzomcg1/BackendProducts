@@ -11,20 +11,20 @@ const createUsu = async (req, res) => {
     }
 };
 
-// Obtener todos los productos
+// Obtener todos los productos con la información del proveedor
 const getUsu = async (req, res) => {
     try {
-        const productos = await Producto.find();
+        const productos = await Producto.find().populate('proveedor'); // Poblar el campo 'proveedor'
         res.json(productos);
     } catch (error) {
         res.status(500).json({ message: 'Error al obtener productos', error });
     }
 };
 
-// Obtener un producto específico por ID
+// Obtener un producto específico por ID con la información del proveedor
 const getUsuario = async (req, res) => {
     try {
-        const producto = await Producto.findById(req.params.id);
+        const producto = await Producto.findById(req.params.id).populate('proveedor'); // Poblar el campo 'proveedor'
         if (!producto) {
             return res.status(404).json({ message: 'Producto no encontrado' });
         }
