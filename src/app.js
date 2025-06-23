@@ -16,7 +16,6 @@ app.use('/api/producto', require('./routes/producto'));
 app.use('/api/clientes', require('./routes/cliente'));
 app.use('/api/ventas', require('./routes/venta.routes.js'));
 app.use('/api/categorias', require('./routes/categoria.routes.js'));
-
-
+app.use('/api/proveedores', require('./routes/proveedores.routes.js')); 
 
 module.exports = app;
