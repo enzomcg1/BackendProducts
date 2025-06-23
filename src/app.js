@@ -10,6 +10,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Ruta raíz para prueba rápida
+app.get('/', (req, res) => {
+  res.send('API Backend funcionando correctamente');
+});
+
 // Rutas
 app.use('/api/auth', require('./routes/auth.js'));
 app.use('/api/producto', require('./routes/producto'));
